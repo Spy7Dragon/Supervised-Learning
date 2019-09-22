@@ -2,50 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f10855ec-c2dc-48c2-9c88-32664064a2ab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Training Size.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/divorce.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw_data/psam_pusa.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw_data/psam_pusb.csv" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/graphs/DecisionTreeClassifier()-Training Size.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/LCDataDictionary.xlsx" afterPath="$PROJECT_DIR$/raw_data/LCDataDictionary.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/LoanStats3a_securev1.csv" afterPath="$PROJECT_DIR$/raw_data/LoanStats3a_securev1.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/AdaBoostClassifier(DecisionTreeClassifier())-Estimators.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Estimators.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/AdaBoostClassifier(DecisionTreeClassifier())-Learning Rate.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Learning Rate.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/AdaBoostClassifier(DecisionTreeClassifier())-Max Depth.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Max Depth.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/AdaBoostClassifier(DecisionTreeClassifier())-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Training Size.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/DecisionTreeClassifier()-Criterion.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Criterion.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/DecisionTreeClassifier()-Max Depth.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Max Depth.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/DecisionTreeClassifier()-Min Samples Split.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Min Samples Split.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/DecisionTreeClassifier(max_depth=4)-Max Depth.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier(max_depth=4)-Max Depth.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/DecisionTreeClassifier(max_depth=4)-Min Samples Split.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier(max_depth=4)-Min Samples Split.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/DecisionTreeClassifier(max_depth=4)-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier(max_depth=4)-Training Size.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/DecisionTreeClassifier-Max Depth.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier-Max Depth.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/DecisionTreeClassifier-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier-Training Size.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/KNeighborsClassifier(n_neighbors=1)-Algorithm.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=1)-Algorithm.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/KNeighborsClassifier(n_neighbors=1)-Power Parameter.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=1)-Power Parameter.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/KNeighborsClassifier(n_neighbors=1)-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=1)-Training Size.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/KNeighborsClassifier(n_neighbors=5)-Algorithm.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=5)-Algorithm.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/KNeighborsClassifier(n_neighbors=5)-Power Parameter.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=5)-Power Parameter.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/KNeighborsClassifier(n_neighbors=5)-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=5)-Training Size.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/KNeighborsClassifier(n_neighbors=9)-Algorithm.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=9)-Algorithm.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/KNeighborsClassifier(n_neighbors=9)-Power Parameter.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=9)-Power Parameter.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/KNeighborsClassifier(n_neighbors=9)-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=9)-Training Size.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/MLPClassifier-Activation.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Activation.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/MLPClassifier-Hidden Layer Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Hidden Layer Size.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/MLPClassifier-Iterations.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Iterations.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/MLPClassifier-Learning Rate Schedule.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Learning Rate Schedule.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/MLPClassifier-Learning Rate.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Learning Rate.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/MLPClassifier-Solver.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Solver.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/MLPClassifier-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Training Size.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/SVC(kernel='poly')-Iterations.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-Iterations.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/SVC(kernel='poly')-N-Degree.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-N-Degree.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/SVC(kernel='poly')-Probability.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-Probability.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/SVC(kernel='poly')-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-Training Size.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/SVC(kernel='rbf')-Iterations.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='rbf')-Iterations.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/graphs/SVC(kernel='rbf')-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='rbf')-Training Size.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tables/Error Data.csv" afterPath="$PROJECT_DIR$/lendingclub_tables/Error Data.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tables/Time Data.csv" afterPath="$PROJECT_DIR$/lendingclub_tables/Time Data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Estimators.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Estimators.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Learning Rate.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Learning Rate.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Max Depth.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Max Depth.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Training Size.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Criterion.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Criterion.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Max Depth.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Max Depth.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Min Samples Split.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Min Samples Split.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier()-Training Size.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier(max_depth=4)-Max Depth.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier(max_depth=4)-Max Depth.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier(max_depth=4)-Min Samples Split.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier(max_depth=4)-Min Samples Split.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier(max_depth=4)-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier(max_depth=4)-Training Size.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier-Max Depth.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier-Max Depth.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/DecisionTreeClassifier-Training Size.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=1)-Algorithm.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=1)-Algorithm.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=1)-Power Parameter.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=1)-Power Parameter.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=1)-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=1)-Training Size.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=5)-Algorithm.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=5)-Algorithm.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=5)-Power Parameter.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=5)-Power Parameter.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=5)-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=5)-Training Size.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=9)-Algorithm.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=9)-Algorithm.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=9)-Power Parameter.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=9)-Power Parameter.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=9)-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/KNeighborsClassifier(n_neighbors=9)-Training Size.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Activation.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Activation.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Hidden Layer Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Hidden Layer Size.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Iterations.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Iterations.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Learning Rate Schedule.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Learning Rate Schedule.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Learning Rate.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Learning Rate.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Solver.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Solver.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/MLPClassifier-Training Size.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-Iterations.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-Iterations.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-N-Degree.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-N-Degree.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-Probability.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-Probability.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='poly')-Training Size.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='rbf')-Iterations.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='rbf')-Iterations.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='rbf')-Training Size.png" afterPath="$PROJECT_DIR$/lendingclub_graphs/SVC(kernel='rbf')-Training Size.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/divorce.py" afterPath="$PROJECT_DIR$/divorce.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,36 +48,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="divorce.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/divorce.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="803">
-                    <caret line="685" column="0" lean-forward="true" selection-start-line="685" selection-start-column="0" selection-end-line="685" selection-end-column="0" />
-                    <folding>
-                      <element signature="e#26427#26446#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="670" column="0" lean-forward="true" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
+            <state relative-caret-position="161">
+              <caret line="210" column="0" lean-forward="false" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -92,67 +63,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DecisionTreeClassifier()-Training Size.png" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/divorce_graphs/DecisionTreeClassifier()-Training Size.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <file leaf-file-name="divorce.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/divorce.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="1017" column="0" lean-forward="false" selection-start-line="1017" selection-start-column="0" selection-end-line="1017" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/sklearn/tree/tree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="validation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/sklearn/utils/validation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="544" column="0" lean-forward="false" selection-start-line="544" selection-start-column="0" selection-end-line="544" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="psam_pusa.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/raw_data/psam_pusa.csv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parsers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/pandas/io/parsers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26436">
-              <caret line="1870" column="0" lean-forward="false" selection-start-line="1870" selection-start-column="0" selection-end-line="1870" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="psam_pusb.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/raw_data/psam_pusb.csv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-11109">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding>
+                <element signature="e#26424#26443#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -188,8 +106,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="875" />
-    <option name="width" value="1050" />
+    <option name="x" value="-8" />
+    <option name="width" value="986" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
@@ -398,9 +316,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="875" y="0" width="1050" height="1050" extended-state="0" />
+    <frame x="-8" y="0" width="986" height="1050" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2205029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22061856" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -408,10 +326,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39787233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39787233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20502901" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2185567" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -419,6 +337,26 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36185566" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39787233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2185567" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -468,14 +406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/sklearn/tree/tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -484,14 +414,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="670" column="0" lean-forward="true" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/divorce_graphs/DecisionTreeClassifier()-Criterion.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divorce_graphs/DecisionTreeClassifier()-Min Samples Split.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divorce_graphs/DecisionTreeClassifier()-Max Depth.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/divorce_graphs/DecisionTreeClassifier()-Training Size.png">
@@ -501,10 +436,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/divorce.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="685" column="0" lean-forward="true" selection-start-line="685" selection-start-column="0" selection-end-line="685" selection-end-column="0" />
+        <state relative-caret-position="-11109">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#26427#26446#0" expanded="true" />
+            <element signature="e#26424#26443#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/sklearn/ensemble/weight_boosting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="290" column="0" lean-forward="false" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divorce_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Learning Rate.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divorce_graphs/AdaBoostClassifier(DecisionTreeClassifier())-Estimators.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/numpy/core/_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/sklearn/tree/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="367" column="0" lean-forward="false" selection-start-line="367" selection-start-column="0" selection-end-line="367" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/sklearn/utils/extmath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="210" column="0" lean-forward="false" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

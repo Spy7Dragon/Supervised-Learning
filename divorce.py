@@ -1,9 +1,6 @@
-
-
 # Question: predict likelihood of at least one divorce after first marriage
 # assuming you only get married once.
 # Based on sex, education, occupation, and income
-
 
 # MAR Character 1
 # Marital status
