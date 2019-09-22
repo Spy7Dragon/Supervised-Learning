@@ -121,3 +121,22 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+raw_data/LoanStats3b_securev1.csv
+raw_data/LoanStats3c_securev1.csv
+raw_data/LoanStats_securev1_2019Q2.csv
+raw_data/LoanStats_securev1_2019Q1.csv
+raw_data/LoanStats_securev1_2018Q4.csv
+raw_data/LoanStats_securev1_2018Q3.csv
+raw_data/LoanStats_securev1_2018Q2.csv
+raw_data/LoanStats_securev1_2018Q1.csv
+raw_data/LoanStats_securev1_2017Q4.csv
+raw_data/LoanStats_securev1_2017Q3.csv
+raw_data/LoanStats_securev1_2017Q2.csv
+raw_data/LoanStats_securev1_2017Q1.csv
+raw_data/LoanStats_securev1_2016Q4.csv
+raw_data/LoanStats_securev1_2016Q3.csv
+raw_data/LoanStats_securev1_2016Q2.csv
+raw_data/LoanStats_securev1_2016Q1.csv
+raw_data/LoanStats3d_securev1.csv
+raw_data/psam_pusa.csv
+raw_data/psam_pusb.csv

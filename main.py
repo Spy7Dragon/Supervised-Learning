@@ -1,14 +1,14 @@
+from timeit import default_timer as timer
+
+import matplotlib.pyplot as plt
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.metrics import *
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import AdaBoostClassifier
-from sklearn.neural_network import MLPClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import *
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from timeit import default_timer as timer
+
+from divorce import *
 
 columns = [
     "annual_inc",
@@ -95,8 +95,8 @@ def perform_training_size(model, name):
     graph = plot_frame.plot(x='Training Size', y=['Training Error', 'Test Error'], title=name + '-Training Size')
     graph.set_xlabel('Training Size')
     graph.set_ylabel('Error')
-    plt.ylim(0.0, 1.0)
-    plt.savefig('graphs/' + name + '-Training Size.png')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-Training Size.png')
 
 
 def perform_iterations(model, name):
@@ -123,7 +123,7 @@ def perform_iterations(model, name):
     graph.set_xlabel('Iterations')
     graph.set_ylabel('Error')
     plt.ylim(0.0, 0.5)
-    plt.savefig('graphs/' + name + '-Iterations.png')
+    plt.savefig(graph_directory + '/' + name + '-Iterations.png')
 
 
 def perform_decision_tree_analysis(model, name):
@@ -149,52 +149,54 @@ def perform_decision_tree_analysis(model, name):
     graph.set_xlabel('Max Depth')
     graph.set_ylabel('Error')
     plt.ylim(0.0, 0.5)
-    plt.savefig('graphs/' + name + '-Max Depth.png')
+    plt.savefig(graph_directory + '/' + name + '-Max Depth.png')
+    model.max_depth = None
     # min_samples_split
-    # intervals = 20
-    # interval_size = 0.05
-    # section_scores = []
-    # for i in range(1, intervals + 1):
-    #     min_samples_split = float(i * interval_size)
-    #     classifier.min_samples_split = min_samples_split
-    #     classifier.fit(training_features, training_classes)
-    #     predicted_training_classes_section = classifier.predict(training_features)
-    #     predicted_test_classes_section = classifier.predict(test_features)
-    #     training_score = accuracy_score(training_classes, predicted_training_classes_section)
-    #     training_error = 1.0 - training_score
-    #     test_score = accuracy_score(test_classes, predicted_test_classes_section)
-    #     test_error = 1.0 - test_score
-    #     section_scores.append([min_samples_split, training_error, test_error])
-    #
-    # ind_var_name = "Min Samples Split"
-    # plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
-    # graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=model_name + '-' + ind_var_name)
-    # graph.set_xlabel(ind_var_name)
-    # graph.set_ylabel('Error')
-    # plt.ylim(0.0, 0.5)
-    # plt.savefig('graphs/' + model_name + '-' + ind_var_name + '.png')
+    intervals = 20
+    interval_size = 0.05
+    section_scores = []
+    for i in range(1, intervals + 1):
+        min_samples_split = float(i * interval_size)
+        model.min_samples_split = min_samples_split
+        model.fit(training_features, training_classes)
+        predicted_training_classes_section = model.predict(training_features)
+        predicted_test_classes_section = model.predict(test_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes_section)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes_section)
+        test_error = 1.0 - test_score
+        section_scores.append([min_samples_split, training_error, test_error])
+
+    ind_var_name = "Min Samples Split"
+    plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
+    graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=name + '-' + ind_var_name)
+    graph.set_xlabel(ind_var_name)
+    graph.set_ylabel('Error')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
+    model.min_samples_split = None
     # criterion
-    # criteria = ['gini', 'entropy']
-    # section_scores = []
-    # for i in range(0, len(criteria)):
-    #     criterion = criteria[0]
-    #     classifier.criterion = criterion
-    #     classifier.fit(training_features, training_classes)
-    #     predicted_training_classes_section = classifier.predict(training_features)
-    #     predicted_test_classes_section = classifier.predict(test_features)
-    #     training_score = accuracy_score(training_classes, predicted_training_classes_section)
-    #     training_error = 1.0 - training_score
-    #     test_score = accuracy_score(test_classes, predicted_test_classes_section)
-    #     test_error = 1.0 - test_score
-    #     section_scores.append([criterion, training_error, test_error])
-    #
-    # ind_var_name = "Criterion"
-    # plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
-    # graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=model_name + '-' + ind_var_name)
-    # graph.set_xlabel(ind_var_name)
-    # graph.set_ylabel('Error')
-    # plt.ylim(0.0, 0.5)
-    # plt.savefig('graphs/' + model_name + '-' + ind_var_name + '.png')
+    criteria = ['gini', 'entropy']
+    section_scores = []
+    for i in range(0, len(criteria)):
+        criterion = criteria[0]
+        model.criterion = criterion
+        model.fit(training_features, training_classes)
+        predicted_training_classes_section = model.predict(training_features)
+        predicted_test_classes_section = model.predict(test_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes_section)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes_section)
+        test_error = 1.0 - test_score
+        section_scores.append([criterion, training_error, test_error])
+
+    ind_var_name = "Criterion"
+    plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
+    graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=name + '-' + ind_var_name)
+    graph.set_xlabel(ind_var_name)
+    graph.set_ylabel('Error')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
 
 
 def perform_neural_net_analysis(model, name):
@@ -221,96 +223,97 @@ def perform_neural_net_analysis(model, name):
     graph.set_xlabel(ind_var_name)
     graph.set_ylabel('Error')
     plt.ylim(0.0, 0.5)
-    plt.savefig('graphs/' + name + '-' + ind_var_name + '.png')
+    plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
+    model.hidden_layer_sizes = 100
     # activation
-    # activations = ['identity', 'logistic', 'tanh', 'relu']
-    # section_scores = []
-    # for i in range(0, len(activations)):
-    #     activation = activations[i]
-    #     classifier.activation = activation
-    #     classifier.fit(training_features, training_classes)
-    #     predicted_training_classes_section = classifier.predict(training_features)
-    #     predicted_test_classes_section = classifier.predict(test_features)
-    #     training_score = accuracy_score(training_classes, predicted_training_classes_section)
-    #     training_error = 1.0 - training_score
-    #     test_score = accuracy_score(test_classes, predicted_test_classes_section)
-    #     test_error = 1.0 - test_score
-    #     section_scores.append([activation, training_error, test_error])
-    #
-    # ind_var_name = 'Activation'
-    # plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
-    # graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=model_name + '-' + ind_var_name)
-    # graph.set_xlabel(ind_var_name)
-    # graph.set_ylabel('Error')
-    # plt.ylim(0.0, 0.5)
-    # plt.savefig('graphs/' + model_name + '-' + ind_var_name + '.png')
+    activations = ['identity', 'logistic', 'tanh', 'relu']
+    section_scores = []
+    for i in range(0, len(activations)):
+        activation = activations[i]
+        model.activation = activation
+        model.fit(training_features, training_classes)
+        predicted_training_classes_section = model.predict(training_features)
+        predicted_test_classes_section = model.predict(test_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes_section)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes_section)
+        test_error = 1.0 - test_score
+        section_scores.append([activation, training_error, test_error])
+
+    ind_var_name = 'Activation'
+    plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
+    graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=name + '-' + ind_var_name)
+    graph.set_xlabel(ind_var_name)
+    graph.set_ylabel('Error')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
     # solver
-    # solvers = ['lbfgs', 'sgd', 'adam']
-    # section_scores = []
-    # for i in range(0, len(solvers)):
-    #     solver = solvers[i]
-    #     classifier.solver = solver
-    #     classifier.fit(training_features, training_classes)
-    #     predicted_training_classes_section = classifier.predict(training_features)
-    #     predicted_test_classes_section = classifier.predict(test_features)
-    #     training_score = accuracy_score(training_classes, predicted_training_classes_section)
-    #     training_error = 1.0 - training_score
-    #     test_score = accuracy_score(test_classes, predicted_test_classes_section)
-    #     test_error = 1.0 - test_score
-    #     section_scores.append([solver, training_error, test_error])
-    #
-    # ind_var_name = 'Solver'
-    # plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
-    # graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=model_name + '-' + ind_var_name)
-    # graph.set_xlabel(ind_var_name)
-    # graph.set_ylabel('Error')
-    # plt.ylim(0.0, 0.5)
-    # plt.savefig('graphs/' + model_name + '-' + ind_var_name + '.png')
+    solvers = ['lbfgs', 'sgd', 'adam']
+    section_scores = []
+    for i in range(0, len(solvers)):
+        solver = solvers[i]
+        model.solver = solver
+        model.fit(training_features, training_classes)
+        predicted_training_classes_section = model.predict(training_features)
+        predicted_test_classes_section = model.predict(test_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes_section)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes_section)
+        test_error = 1.0 - test_score
+        section_scores.append([solver, training_error, test_error])
+
+    ind_var_name = 'Solver'
+    plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
+    graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=name + '-' + ind_var_name)
+    graph.set_xlabel(ind_var_name)
+    graph.set_ylabel('Error')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
     # learning_rate
-    # learning_rates = ['constant', 'invscaling', 'adaptive']
-    # section_scores = []
-    # for i in range(0, len(learning_rates)):
-    #     learning_rate = learning_rates[i]
-    #     classifier.learning_rate = learning_rate
-    #     classifier.fit(training_features, training_classes)
-    #     predicted_training_classes_section = classifier.predict(training_features)
-    #     predicted_test_classes_section = classifier.predict(test_features)
-    #     training_score = accuracy_score(training_classes, predicted_training_classes_section)
-    #     training_error = 1.0 - training_score
-    #     test_score = accuracy_score(test_classes, predicted_test_classes_section)
-    #     test_error = 1.0 - test_score
-    #     section_scores.append([learning_rate, training_error, test_error])
-    #
-    # ind_var_name = 'Learning Rate Schedule'
-    # plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
-    # graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=model_name + '-' + ind_var_name)
-    # graph.set_xlabel(ind_var_name)
-    # graph.set_ylabel('Error')
-    # plt.ylim(0.0, 0.5)
-    # plt.savefig('graphs/' + model_name + '-' + ind_var_name + '.png')
+    learning_rates = ['constant', 'invscaling', 'adaptive']
+    section_scores = []
+    for i in range(0, len(learning_rates)):
+        learning_rate = learning_rates[i]
+        model.learning_rate = learning_rate
+        model.fit(training_features, training_classes)
+        predicted_training_classes_section = model.predict(training_features)
+        predicted_test_classes_section = model.predict(test_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes_section)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes_section)
+        test_error = 1.0 - test_score
+        section_scores.append([learning_rate, training_error, test_error])
+
+    ind_var_name = 'Learning Rate Schedule'
+    plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
+    graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=name + '-' + ind_var_name)
+    graph.set_xlabel(ind_var_name)
+    graph.set_ylabel('Error')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
     # learning_rate_init
-    # intervals = 20
-    # interval_size = 0.00001
-    # section_scores = []
-    # for i in range(1, intervals + 1):
-    #     learning_rate_init = i * interval_size
-    #     classifier.learning_rate_init = learning_rate_init
-    #     classifier.fit(training_features, training_classes)
-    #     predicted_training_classes_section = classifier.predict(training_features)
-    #     predicted_test_classes_section = classifier.predict(test_features)
-    #     training_score = accuracy_score(training_classes, predicted_training_classes_section)
-    #     training_error = 1.0 - training_score
-    #     test_score = accuracy_score(test_classes, predicted_test_classes_section)
-    #     test_error = 1.0 - test_score
-    #     section_scores.append([learning_rate_init, training_error, test_error])
-    #
-    # ind_var_name = 'Learning Rate'
-    # plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
-    # graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=model_name + '-' + ind_var_name)
-    # graph.set_xlabel(ind_var_name)
-    # graph.set_ylabel('Error')
-    # plt.ylim(0.0, 0.5)
-    # plt.savefig('graphs/' + model_name + '-' + ind_var_name + '.png')
+    intervals = 20
+    interval_size = 0.00001
+    section_scores = []
+    for i in range(1, intervals + 1):
+        learning_rate_init = i * interval_size
+        model.learning_rate_init = learning_rate_init
+        model.fit(training_features, training_classes)
+        predicted_training_classes_section = model.predict(training_features)
+        predicted_test_classes_section = model.predict(test_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes_section)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes_section)
+        test_error = 1.0 - test_score
+        section_scores.append([learning_rate_init, training_error, test_error])
+
+    ind_var_name = 'Learning Rate'
+    plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
+    graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'], title=name + '-' + ind_var_name)
+    graph.set_xlabel(ind_var_name)
+    graph.set_ylabel('Error')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
 
 
 def perform_boosting_analysis(model, name):
@@ -338,31 +341,32 @@ def perform_boosting_analysis(model, name):
     graph.set_xlabel(delta_name)
     graph.set_ylabel('Error')
     plt.ylim(0.0, 0.5)
-    plt.savefig('graphs/' + name + '-' + delta_name + '.png')
+    plt.savefig(graph_directory + '/' + name + '-' + delta_name + '.png')
     model.learning_rate = 1.0
     # n_estimators
-    # intervals = 20
-    # interval_size = 25
-    # section_scores = []
-    # for i in range(1, intervals + 1):
-    #     n_estimators = int(i * interval_size)
-    #     classifier.n_estimators = n_estimators
-    #     classifier.fit(training_features, training_classes)
-    #     predicted_training_classes_section = classifier.predict(training_features)
-    #     predicted_test_classes_section = classifier.predict(test_features)
-    #     training_score = accuracy_score(training_classes, predicted_training_classes_section)
-    #     training_error = 1.0 - training_score
-    #     test_score = accuracy_score(test_classes, predicted_test_classes_section)
-    #     test_error = 1.0 - test_score
-    #     section_scores.append([n_estimators, training_error, test_error])
-    #
-    # plot_frame = pd.DataFrame(section_scores, columns=['Estimators', 'Training Error', 'Test Error'])
-    # graph = plot_frame.plot(x='Estimators', y=['Training Error', 'Test Error'],
-    #                         title=model_name + '-Estimators')
-    # graph.set_xlabel('Estimators')
-    # graph.set_ylabel('Error')
-    # plt.ylim(0.0, 0.5)
-    # plt.savefig('graphs/' + model_name + '-Estimators.png')
+    intervals = 20
+    interval_size = 25
+    section_scores = []
+    for i in range(1, intervals + 1):
+        n_estimators = int(i * interval_size)
+        model.n_estimators = n_estimators
+        model.fit(training_features, training_classes)
+        predicted_training_classes_section = model.predict(training_features)
+        predicted_test_classes_section = model.predict(test_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes_section)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes_section)
+        test_error = 1.0 - test_score
+        section_scores.append([n_estimators, training_error, test_error])
+
+    plot_frame = pd.DataFrame(section_scores, columns=['Estimators', 'Training Error', 'Test Error'])
+    graph = plot_frame.plot(x='Estimators', y=['Training Error', 'Test Error'],
+                            title=name + '-Estimators')
+    graph.set_xlabel('Estimators')
+    graph.set_ylabel('Error')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-Estimators.png')
+    model.n_estimators = 50
     # max_depth
     intervals = 20
     interval_size = 1
@@ -385,7 +389,7 @@ def perform_boosting_analysis(model, name):
     graph.set_xlabel('Max Depth')
     graph.set_ylabel('Error')
     plt.ylim(0.0, 0.5)
-    plt.savefig('graphs/' + name + '-Max Depth.png')
+    plt.savefig(graph_directory + '/' + name + '-Max Depth.png')
 
 
 def perform_svc_poly_analysis(model, name):
@@ -413,69 +417,61 @@ def perform_svc_poly_analysis(model, name):
     graph.set_xlabel(delta_name)
     graph.set_ylabel('Error')
     plt.ylim(0.0, 0.5)
-    plt.savefig('graphs/' + name + '-' + delta_name + '.png')
+    plt.savefig(graph_directory + '/' + name + '-' + delta_name + '.png')
 
 
 def perform_knearest_neighbors_analysis(model, name):
     print("Perform analysis for " + name)
     # algorithm
-    # algorithms = ['auto', 'ball_tree', 'kd_tree', 'brute']
-    # section_scores = []
-    # for i in range(0, len(algorithms)):
-    #     algorithm = algorithms[i]
-    #     classifier.algorithm = algorithm
-    #     classifier.fit(training_features, training_classes)
-    #     predicted_training_classes_section = classifier.predict(training_features)
-    #     predicted_test_classes_section = classifier.predict(test_features)
-    #     training_score = accuracy_score(training_classes, predicted_training_classes_section)
-    #     training_error = 1.0 - training_score
-    #     test_score = accuracy_score(test_classes, predicted_test_classes_section)
-    #     test_error = 1.0 - test_score
-    #     section_scores.append([algorithm, training_error, test_error])
-    #
-    # ind_var_name = "Algorithm"
-    # plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
-    # graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'],
-    #                         title=model_name + '-' + ind_var_name)
-    # graph.set_xlabel(ind_var_name)
-    # graph.set_ylabel('Error')
-    # plt.ylim(0.0, 0.5)
-    # plt.savefig('graphs/' + model_name + '-' + ind_var_name + '.png')
+    algorithms = ['auto', 'ball_tree', 'kd_tree', 'brute']
+    section_scores = []
+    for i in range(0, len(algorithms)):
+        algorithm = algorithms[i]
+        model.algorithm = algorithm
+        model.fit(training_features, training_classes)
+        predicted_training_classes_section = model.predict(training_features)
+        predicted_test_classes_section = model.predict(test_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes_section)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes_section)
+        test_error = 1.0 - test_score
+        section_scores.append([algorithm, training_error, test_error])
+
+    ind_var_name = "Algorithm"
+    plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
+    graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'],
+                            title=name + '-' + ind_var_name)
+    graph.set_xlabel(ind_var_name)
+    graph.set_ylabel('Error')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
     # p
-    # intervals = 3
-    # interval_size = 1
-    # section_scores = []
-    # for i in range(1, intervals + 1):
-    #     p = interval_size * i
-    #     classifier.p = p
-    #     classifier.fit(training_features, training_classes)
-    #     predicted_training_classes_section = classifier.predict(training_features)
-    #     predicted_test_classes_section = classifier.predict(test_features)
-    #     training_score = accuracy_score(training_classes, predicted_training_classes_section)
-    #     training_error = 1.0 - training_score
-    #     test_score = accuracy_score(test_classes, predicted_test_classes_section)
-    #     test_error = 1.0 - test_score
-    #     section_scores.append([p, training_error, test_error])
-    #
-    # ind_var_name = "Power Parameter"
-    # plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
-    # graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'],
-    #                         title=model_name + '-' + ind_var_name)
-    # graph.set_xlabel(ind_var_name)
-    # graph.set_ylabel('Error')
-    # plt.ylim(0.0, 0.5)
-    # plt.savefig('graphs/' + model_name + '-' + ind_var_name + '.png')
+    intervals = 3
+    interval_size = 1
+    section_scores = []
+    for i in range(1, intervals + 1):
+        p = interval_size * i
+        model.p = p
+        model.fit(training_features, training_classes)
+        predicted_training_classes_section = model.predict(training_features)
+        predicted_test_classes_section = model.predict(test_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes_section)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes_section)
+        test_error = 1.0 - test_score
+        section_scores.append([p, training_error, test_error])
+
+    ind_var_name = "Power Parameter"
+    plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
+    graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'],
+                            title=name + '-' + ind_var_name)
+    graph.set_xlabel(ind_var_name)
+    graph.set_ylabel('Error')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
 
 
-if __name__ == "__main__":
-    train = pd.read_csv("data/lendingclub_train.csv", usecols=columns)
-    test = pd.read_csv("data/lendingclub_test.csv", usecols=columns)
-
-    training_features = train[columns[:-1]]
-    training_classes = train[columns[-1:]].astype(np.bool)
-    test_features = test[columns[:-1]]
-    test_classes = test[columns[-1:]].astype(np.bool)
-
+def perform_lending_club_classification():
     classifiers = [DecisionTreeClassifier(),
                    MLPClassifier(hidden_layer_sizes=10, random_state=7),
                    AdaBoostClassifier(DecisionTreeClassifier(max_depth=1)),
@@ -530,12 +526,12 @@ if __name__ == "__main__":
     time_table = pd.DataFrame(time_data,
                               columns=['Model', 'Training Time', 'Classification Time'])
     time_table.set_index('Model', inplace=True)
-    time_table.to_csv('tables/Time Data.csv')
+    time_table.to_csv(table_directory + '/Time Data.csv')
 
     error_table = pd.DataFrame(error_data,
                                columns=['Model', 'Training Error', 'Test Error'])
     error_table.set_index('Model', inplace=True)
-    error_table.to_csv('tables/Error Data.csv')
+    error_table.to_csv(table_directory + '/Error Data.csv')
 
     classifiers = [DecisionTreeClassifier(),
                    MLPClassifier(hidden_layer_sizes=10, random_state=7),
@@ -561,3 +557,114 @@ if __name__ == "__main__":
     perform_knearest_neighbors_analysis(classifiers[6], model_names[6])
     perform_knearest_neighbors_analysis(classifiers[7], model_names[7])
     print("Complete")
+
+
+def perform_divorce_classification():
+    classifiers = [DecisionTreeClassifier(),
+                   MLPClassifier(hidden_layer_sizes=10, random_state=7),
+                   AdaBoostClassifier(DecisionTreeClassifier(max_depth=1)),
+                   SVC(kernel='rbf', gamma='auto'),
+                   SVC(kernel='poly', gamma='auto'),
+                   KNeighborsClassifier(n_neighbors=1,
+                                        weights='distance',
+                                        algorithm='brute'),
+                   KNeighborsClassifier(n_neighbors=5,
+                                        weights='distance',
+                                        algorithm='brute'),
+                   KNeighborsClassifier(n_neighbors=9,
+                                        weights='distance',
+                                        algorithm='brute')
+                   ]
+
+    model_names = ["DecisionTreeClassifier()",
+                   "MLPClassifier",
+                   "AdaBoostClassifier(DecisionTreeClassifier())",
+                   "SVC(kernel='rbf')",
+                   "SVC(kernel='poly')",
+                   "KNeighborsClassifier(n_neighbors=1)",
+                   "KNeighborsClassifier(n_neighbors=5)",
+                   "KNeighborsClassifier(n_neighbors=9)"]
+
+    time_data = []
+    error_data = []
+    for i in range(0, len(classifiers)):
+        classifier = classifiers[i]
+        model_name = model_names[i]
+        # Time data
+        start = timer()
+        classifier.fit(training_features, training_classes)
+        end = timer()
+        training_time = end - start
+        start = timer()
+        predicted_test_classes = classifier.predict(test_features)
+        end = timer()
+        classification_time = end - start
+        time_data.append([model_name, training_time, classification_time])
+        # Error data
+        predicted_training_classes = classifier.predict(training_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes)
+        test_error = 1.0 - test_score
+        error_data.append([model_name, training_error, test_error])
+
+        perform_training_size(classifier, model_name)
+        perform_iterations(classifier, model_name)
+
+    time_table = pd.DataFrame(time_data,
+                              columns=['Model', 'Training Time', 'Classification Time'])
+    time_table.set_index('Model', inplace=True)
+    time_table.to_csv(table_directory + '/Time Data.csv')
+
+    error_table = pd.DataFrame(error_data,
+                               columns=['Model', 'Training Error', 'Test Error'])
+    error_table.set_index('Model', inplace=True)
+    error_table.to_csv(table_directory + '/Error Data.csv')
+
+    classifiers = [DecisionTreeClassifier(),
+                   MLPClassifier(hidden_layer_sizes=10, random_state=7),
+                   AdaBoostClassifier(DecisionTreeClassifier(max_depth=1)),
+                   SVC(kernel='rbf', gamma='auto'),
+                   SVC(kernel='poly', gamma='auto'),
+                   KNeighborsClassifier(n_neighbors=1,
+                                        weights='distance',
+                                        algorithm='brute'),
+                   KNeighborsClassifier(n_neighbors=5,
+                                        weights='distance',
+                                        algorithm='brute'),
+                   KNeighborsClassifier(n_neighbors=9,
+                                        weights='distance',
+                                        algorithm='brute')
+                   ]
+
+    perform_decision_tree_analysis(classifiers[0], model_names[0])
+    perform_neural_net_analysis(classifiers[1], model_names[1])
+    perform_boosting_analysis(classifiers[2], model_names[2])
+    perform_svc_poly_analysis(classifiers[4], model_names[4])
+    perform_knearest_neighbors_analysis(classifiers[5], model_names[5])
+    perform_knearest_neighbors_analysis(classifiers[6], model_names[6])
+    perform_knearest_neighbors_analysis(classifiers[7], model_names[7])
+    print("Complete")
+
+
+if __name__ == "__main__":
+    # graph_directory = 'lendingclub_graphs'
+    # table_directory = 'lendingclub_tables'
+    # train = pd.read_csv("data/lendingclub_train.csv", usecols=columns)
+    # test = pd.read_csv("data/lendingclub_test.csv", usecols=columns)
+    #
+    # training_features = train[columns[:-1]]
+    # training_classes = train[columns[-1:]].astype(np.bool)
+    # test_features = test[columns[:-1]]
+    # test_classes = test[columns[-1:]].astype(np.bool)
+    # perform_lending_club_classification()
+
+    create_divorce_data()
+    graph_directory = 'divorce_graphs'
+    table_directory = 'divorce_tables'
+    training_features = pd.read_csv('data/divorce_train_features.csv', usecols=feature_columns)
+    training_classes = pd.read_csv('data/divorce_train_classes.csv', index_col=0)
+    test_features = pd.read_csv('data/divorce_test_features.csv', usecols=feature_columns)
+    test_classes = pd.read_csv('data/divorce_test_classes.csv', index_col=0)
+    perform_divorce_classification()
+
