@@ -448,29 +448,29 @@ def perform_knearest_neighbors_analysis(model, name):
     # plt.ylim(0.0, 0.5)
     # plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
     # p
-    # intervals = 3
-    # interval_size = 1
-    # section_scores = []
-    # for i in range(1, intervals + 1):
-    #     p = interval_size * i
-    #     model.p = p
-    #     model.fit(training_features, training_classes)
-    #     predicted_training_classes_section = model.predict(training_features)
-    #     predicted_test_classes_section = model.predict(test_features)
-    #     training_score = accuracy_score(training_classes, predicted_training_classes_section)
-    #     training_error = 1.0 - training_score
-    #     test_score = accuracy_score(test_classes, predicted_test_classes_section)
-    #     test_error = 1.0 - test_score
-    #     section_scores.append([p, training_error, test_error])
-    #
-    # ind_var_name = "Power Parameter"
-    # plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
-    # graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'],
-    #                         title=name + '-' + ind_var_name)
-    # graph.set_xlabel(ind_var_name)
-    # graph.set_ylabel('Error')
-    # plt.ylim(0.0, 0.5)
-    # plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
+    intervals = 3
+    interval_size = 1
+    section_scores = []
+    for i in range(1, intervals + 1):
+        p = interval_size * i
+        model.p = p
+        model.fit(training_features, training_classes)
+        predicted_training_classes_section = model.predict(training_features)
+        predicted_test_classes_section = model.predict(test_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes_section)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes_section)
+        test_error = 1.0 - test_score
+        section_scores.append([p, training_error, test_error])
+
+    ind_var_name = "Power Parameter"
+    plot_frame = pd.DataFrame(section_scores, columns=[ind_var_name, 'Training Error', 'Test Error'])
+    graph = plot_frame.plot(x=ind_var_name, y=['Training Error', 'Test Error'],
+                            title=name + '-' + ind_var_name)
+    graph.set_xlabel(ind_var_name)
+    graph.set_ylabel('Error')
+    plt.ylim(0.0, 0.5)
+    plt.savefig(graph_directory + '/' + name + '-' + ind_var_name + '.png')
     # weights
     weight = ['uniform', 'distance']
     section_scores = []
@@ -535,31 +535,31 @@ def perform_lending_club_classification():
         training_time = end - start
         if hasattr(classifier, 'n_iter_'):
             iteration_data.append([model_name, classifier.n_iter_])
-        # start = timer()
-        # predicted_test_classes = classifier.predict(test_features)
-        # end = timer()
-        # classification_time = end - start
-        # time_data.append([model_name, training_time, classification_time])
+        start = timer()
+        predicted_test_classes = classifier.predict(test_features)
+        end = timer()
+        classification_time = end - start
+        time_data.append([model_name, training_time, classification_time])
         # Error data
-        # predicted_training_classes = classifier.predict(training_features)
-        # training_score = accuracy_score(training_classes, predicted_training_classes)
-        # training_error = 1.0 - training_score
-        # test_score = accuracy_score(test_classes, predicted_test_classes)
-        # test_error = 1.0 - test_score
-        # error_data.append([model_name, training_error, test_error])
+        predicted_training_classes = classifier.predict(training_features)
+        training_score = accuracy_score(training_classes, predicted_training_classes)
+        training_error = 1.0 - training_score
+        test_score = accuracy_score(test_classes, predicted_test_classes)
+        test_error = 1.0 - test_score
+        error_data.append([model_name, training_error, test_error])
 
-        # perform_training_size(classifier, model_name)
-        # perform_iterations(classifier, model_name)
+        perform_training_size(classifier, model_name)
+        perform_iterations(classifier, model_name)
 
-    # time_table = pd.DataFrame(time_data,
-    #                           columns=['Model', 'Training Time', 'Classification Time'])
-    # time_table.set_index('Model', inplace=True)
-    # time_table.to_csv(table_directory + '/Time Data.csv')
-    #
-    # error_table = pd.DataFrame(error_data,
-    #                            columns=['Model', 'Training Error', 'Test Error'])
-    # error_table.set_index('Model', inplace=True)
-    # error_table.to_csv(table_directory + '/Error Data.csv')
+    time_table = pd.DataFrame(time_data,
+                              columns=['Model', 'Training Time', 'Classification Time'])
+    time_table.set_index('Model', inplace=True)
+    time_table.to_csv(table_directory + '/Time Data.csv')
+
+    error_table = pd.DataFrame(error_data,
+                               columns=['Model', 'Training Error', 'Test Error'])
+    error_table.set_index('Model', inplace=True)
+    error_table.to_csv(table_directory + '/Error Data.csv')
 
     iteration_table = pd.DataFrame(iteration_data,
                                    columns=['Model', 'Iteration Count'])
@@ -582,13 +582,13 @@ def perform_lending_club_classification():
                                         algorithm='brute')
                    ]
 
-    # perform_decision_tree_analysis(classifiers[0], model_names[0])
-    # perform_neural_net_analysis(classifiers[1], model_names[1])
-    # perform_boosting_analysis(classifiers[2], model_names[2])
-    # perform_svc_poly_analysis(classifiers[4], model_names[4])
-    # perform_knearest_neighbors_analysis(classifiers[5], model_names[5])
-    # perform_knearest_neighbors_analysis(classifiers[6], model_names[6])
-    # perform_knearest_neighbors_analysis(classifiers[7], model_names[7])
+    perform_decision_tree_analysis(classifiers[0], model_names[0])
+    perform_neural_net_analysis(classifiers[1], model_names[1])
+    perform_boosting_analysis(classifiers[2], model_names[2])
+    perform_svc_poly_analysis(classifiers[4], model_names[4])
+    perform_knearest_neighbors_analysis(classifiers[5], model_names[5])
+    perform_knearest_neighbors_analysis(classifiers[6], model_names[6])
+    perform_knearest_neighbors_analysis(classifiers[7], model_names[7])
     print("Complete")
 
 
@@ -616,13 +616,13 @@ def perform_divorce_classification():
                    "KNeighborsClassifier(n_neighbors=5)",
                    "KNeighborsClassifier(n_neighbors=9)"]
 
-    # perform_decision_tree_analysis(classifiers[0], model_names[0])
-    # perform_neural_net_analysis(classifiers[1], model_names[1])
-    # perform_boosting_analysis(classifiers[2], model_names[2])
-    # perform_svc_poly_analysis(classifiers[4], model_names[4])
-    # perform_knearest_neighbors_analysis(classifiers[5], model_names[5])
-    # perform_knearest_neighbors_analysis(classifiers[6], model_names[6])
-    # perform_knearest_neighbors_analysis(classifiers[7], model_names[7])
+    perform_decision_tree_analysis(classifiers[0], model_names[0])
+    perform_neural_net_analysis(classifiers[1], model_names[1])
+    perform_boosting_analysis(classifiers[2], model_names[2])
+    perform_svc_poly_analysis(classifiers[4], model_names[4])
+    perform_knearest_neighbors_analysis(classifiers[5], model_names[5])
+    perform_knearest_neighbors_analysis(classifiers[6], model_names[6])
+    perform_knearest_neighbors_analysis(classifiers[7], model_names[7])
 
     classifiers = [
         DecisionTreeClassifier(max_depth=10),
@@ -685,18 +685,18 @@ def perform_divorce_classification():
 
 
 if __name__ == "__main__":
-    # graph_directory = 'lendingclub_graphs'
-    # table_directory = 'lendingclub_tables'
-    #
-    # train = pd.read_csv("data/lendingclub_train.csv", usecols=columns)
-    # test = pd.read_csv("data/lendingclub_test.csv", usecols=columns)
-    #
-    # training_features = train[columns[:-1]]
-    # training_classes = train[columns[-1:]].astype(np.bool)
-    # test_features = test[columns[:-1]]
-    # test_classes = test[columns[-1:]].astype(np.bool)
-    #
-    # perform_lending_club_classification()
+    graph_directory = 'lendingclub_graphs'
+    table_directory = 'lendingclub_tables'
+
+    train = pd.read_csv("data/lendingclub_train.csv", usecols=columns)
+    test = pd.read_csv("data/lendingclub_test.csv", usecols=columns)
+
+    training_features = train[columns[:-1]]
+    training_classes = train[columns[-1:]].astype(np.bool)
+    test_features = test[columns[:-1]]
+    test_classes = test[columns[-1:]].astype(np.bool)
+
+    perform_lending_club_classification()
 
     # create_divorce_data()
 
