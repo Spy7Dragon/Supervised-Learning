@@ -181,7 +181,7 @@ def perform_decision_tree_analysis(model, name):
     criteria = ['gini', 'entropy']
     section_scores = []
     for i in range(0, len(criteria)):
-        criterion = criteria[0]
+        criterion = criteria[i]
         model.criterion = criterion
         model.fit(training_features, training_classes)
         predicted_training_classes_section = model.predict(training_features)
